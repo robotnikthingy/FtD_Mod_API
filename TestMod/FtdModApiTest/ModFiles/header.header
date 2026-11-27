@@ -1,0 +1,9 @@
+{
+  "Authors": "Authors include Dev",
+  "Version": "00000000-0000-0000-0000-000000000000",
+  "ComponentId": {
+    "Guid": "10bd8a21-a5cc-4316-ab6f-af4f14395a6a",
+    "Name": "FtdModApiTest"
+  },
+  "Description": "Test mod for FtdModApi: checks every API feature and writes a pass/fail report. Changes no gameplay."
+}

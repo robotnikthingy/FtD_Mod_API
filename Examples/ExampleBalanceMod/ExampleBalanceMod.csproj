@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>ExampleBalanceMod</AssemblyName>
+    <RootNamespace>ExampleBalanceMod</RootNamespace>
+    <Version>0.1.0</Version>
+    <FtdModDir>$(FtdModsDir)\ExampleBalanceMod</FtdModDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The API is referenced, not shipped: FtD loads it from its own mod folder. -->
+    <ProjectReference Include="..\..\FtdModApi\FtdModApi.csproj" Private="false" />
+  </ItemGroup>
+
+  <!-- Examples are only copied into the game when asked: dotnet build -p:DeployExamples=true -->
+  <Target Name="DeployToFtd" AfterTargets="Build" Condition="'$(FtdDeploy)' == 'true' And '$(DeployExamples)' == 'true'">
+    <Copy SourceFiles="$(TargetPath);ModFiles\plugin.json;ModFiles\header.header" DestinationFolder="$(FtdModDir)" SkipUnchangedFiles="true" />
+    <ItemGroup>
+      <ExampleItemDup Include="ModFiles\ItemDup\*.itemduplicateandmodify" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ExampleItemDup)" DestinationFolder="$(FtdModDir)\ItemDup" SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="Deployed ExampleBalanceMod to $(FtdModDir)" />
+  </Target>
+
+</Project>

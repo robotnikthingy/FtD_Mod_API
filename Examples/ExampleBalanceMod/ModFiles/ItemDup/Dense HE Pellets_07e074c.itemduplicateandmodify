@@ -1,0 +1,66 @@
+{
+  "SizeInfo": null,
+  "DragSettings": null,
+  "DisplayName": "Dense HE Pellets",
+  "InventoryNameOverride": "Dense HE pellets",
+  "CategoryNameOverride": "",
+  "IdToDuplicate": {
+    "Reference": {
+      "Guid": "4bd38234-b485-4a94-bc2d-d3fc80d89955",
+      "Name": "High Explosive Pellets"
+    },
+    "IsValidReference": true
+  },
+  "MeshReference": {
+    "Reference": {
+      "Guid": "28b31e3d-c9da-4623-a3fc-9d5c32e3ae75",
+      "Name": "High Explosive Pellets"
+    },
+    "IsValidReference": true
+  },
+  "MaterialReference": {
+    "Reference": {
+      "Guid": "00000000-0000-0000-0000-000000000000",
+      "Name": ""
+    },
+    "IsValidReference": false
+  },
+  "CostWeightHealthScaling": 1.0,
+  "CostScaling": 1.5,
+  "HealthScaling": 1.0,
+  "ArmourScaling": 1.0,
+  "WeightScaling": 1.0,
+  "VolumeScaling": 1.0,
+  "change_SizeInfo": false,
+  "change_DragSettings": false,
+  "InventoryXPosition": 1,
+  "InventoryYPosition": 0,
+  "InventoryTabOrVariantId": {
+    "Reference": {
+      "Guid": "4bd38234-b485-4a94-bc2d-d3fc80d89955",
+      "Name": "High Explosive Pellets"
+    },
+    "IsValidReference": true
+  },
+  "DisplayOnInventory": true,
+  "MirrorLaterialFlipReplacementReference": {
+    "Reference": {
+      "Guid": "00000000-0000-0000-0000-000000000000",
+      "Name": ""
+    },
+    "IsValidReference": false
+  },
+  "MirrorVerticalFlipReplacementReference": {
+    "Reference": {
+      "Guid": "00000000-0000-0000-0000-000000000000",
+      "Name": ""
+    },
+    "IsValidReference": false
+  },
+  "ClassNameOverride": "",
+  "ComponentId": {
+    "Guid": "07e074c0-24cb-4e2e-b65b-8e3c2cc8c60c",
+    "Name": "Dense HE Pellets"
+  },
+  "Description": "Example pellet from FtdModApi's ExampleBalanceMod: 30% more HE power per pellet, 20% less shell health."
+}

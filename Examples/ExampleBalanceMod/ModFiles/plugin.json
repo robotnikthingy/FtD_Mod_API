@@ -1,0 +1,8 @@
+{
+  "name": "ExampleBalanceMod",
+  "version": "0.1.0",
+  "gameversion": "4.3.4",
+  "depends": ["FtdModApi"],
+  "conflicts": [],
+  "filename": "ExampleBalanceMod.dll"
+}

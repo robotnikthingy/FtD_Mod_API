@@ -1,0 +1,9 @@
+{
+  "Authors": "Authors include Dev",
+  "Version": "00000000-0000-0000-0000-000000000000",
+  "ComponentId": {
+    "Guid": "18518c46-b076-45b5-bd37-ad2e72d9a8ca",
+    "Name": "ExampleBalanceMod"
+  },
+  "Description": "Example mod for FtdModApi: APS +20% kinetic, explosions +10%, half friendly fire."
+}

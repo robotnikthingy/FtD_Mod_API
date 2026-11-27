@@ -1,0 +1,8 @@
+{
+  "name": "FtdModApiTest",
+  "version": "1.0.0",
+  "gameversion": "4.3.4",
+  "depends": ["FtdModApi"],
+  "conflicts": [],
+  "filename": "FtdModApiTest.dll"
+}

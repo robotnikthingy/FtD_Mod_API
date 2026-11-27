@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Offline patch checker: loads the game's DLLs (without running the game) and checks every FtdModApi patch against
+    them. Run it after a game update with RunPatchChecker.cmd (in the src folder).
+    It is not part of FtdModApi.sln, so the normal build never depends on it.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- .NET 8 (FtdModApi is netstandard2.1, which .NET Framework can't load). Runs on a newer .NET too. -->
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>FtdModApi.PatchChecker</AssemblyName>
+    <RootNamespace>FtdModApiPatchCheck</RootNamespace>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+    <RollForward>Major</RollForward>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Built without copying into the game's Mods folder. -->
+    <ProjectReference Include="..\..\FtdModApi\FtdModApi.csproj" AdditionalProperties="FtdDeploy=false" />
+    <Reference Include="0Harmony"><HintPath>$(FtdHarmonyDll)</HintPath><Private>true</Private></Reference>
+  </ItemGroup>
+</Project>

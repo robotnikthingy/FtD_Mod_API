@@ -1,0 +1,9 @@
+{
+  "Authors": "Authors include Dev",
+  "Version": "00000000-0000-0000-0000-000000000000",
+  "ComponentId": {
+    "Guid": "49cfc9b9-d9eb-4de7-b749-4ea20c19dbd4",
+    "Name": "ExampleDataOnlyMod"
+  },
+  "Description": "Example data-only mod for FtdModApi: changes balance values from a JSON file, no code."
+}

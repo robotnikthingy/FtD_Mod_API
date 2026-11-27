@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>FtdModApi</AssemblyName>
+    <RootNamespace>FtdModApi</RootNamespace>
+    <Version>0.28.1</Version>
+    <Description>Stable modding API for From The Depths, built on Harmony.</Description>
+    <FtdModDir>$(FtdModsDir)\FtdModApi</FtdModDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Harmony 2.2.2 (net45 build). The same binary other FtD mods already run on this game version. -->
+    <Reference Include="0Harmony">
+      <HintPath>$(FtdHarmonyDll)</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Player-facing descriptions of every game value, shown in the settings menu tooltips. -->
+    <EmbeddedResource Include="Resources\FtdModApi.descriptions.json" LogicalName="FtdModApi.descriptions.json" />
+  </ItemGroup>
+
+  <Target Name="DeployToFtd" AfterTargets="Build" Condition="'$(FtdDeploy)' == 'true'">
+    <ItemGroup>
+      <ApiDeployFiles Include="$(TargetPath);$(TargetDir)$(AssemblyName).xml;$(FtdHarmonyDll);ModFiles\plugin.json;ModFiles\header.header;lib\Harmony-LICENSE.txt" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ApiDeployFiles)" DestinationFolder="$(FtdModDir)" SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="Deployed FtdModApi to $(FtdModDir)" />
+  </Target>
+
+</Project>

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>FtdModApiTest</AssemblyName>
+    <RootNamespace>FtdModApiTest</RootNamespace>
+    <Version>1.0.0</Version>
+    <FtdModDir>$(FtdModsDir)\FtdModApiTest</FtdModDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The API is referenced, not shipped: FtD loads it from its own mod folder. -->
+    <ProjectReference Include="..\..\FtdModApi\FtdModApi.csproj" Private="false" />
+  </ItemGroup>
+
+  <!-- Only copied into the game when asked: dotnet build -c Release -p:DeployTestMod=true -->
+  <Target Name="DeployToFtd" AfterTargets="Build" Condition="'$(FtdDeploy)' == 'true' And '$(DeployTestMod)' == 'true'">
+    <Copy SourceFiles="$(TargetPath);ModFiles\plugin.json;ModFiles\header.header" DestinationFolder="$(FtdModDir)" SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="Deployed FtdModApiTest to $(FtdModDir)" />
+  </Target>
+
+</Project>

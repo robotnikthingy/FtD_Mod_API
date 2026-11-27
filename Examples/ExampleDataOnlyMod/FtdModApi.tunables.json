@@ -1,0 +1,13 @@
+{
+  // Data-only balance mod: no DLL, no plugin.json. Needs FtdModApi installed.
+  // Every valid key, with its game default, is listed in Mods/FtdModApi/FtdModApi_tunables.txt.
+
+  // A plain number replaces the value (game default 17.5).
+  "AdvCannon.BaseReloadTime": 26.25,
+
+  // Scale a value (here: APS ammo costs 20% more).
+  "AdvCannon.BaseAmmoCost": { "multiply": 1.2 },
+
+  // Add to a value (here: CRAM gauge packing delay +1 second).
+  "Cram.MinGaugePackDelay": { "add": 1 }
+}

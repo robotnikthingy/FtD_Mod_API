@@ -1,0 +1,23 @@
+{
+  // Content rules: no DLL needed. Every block, prefab and shell part name/guid is listed in
+  // Mods/FtdModApi/FtdModApi_content.txt after a launch.
+
+  // Remove sci-fi APS shell parts from the ammo customiser (existing shells keep working).
+  "hideShellParts": ["EmpWarhead", "EmpHead", "GravitonRam", "ShieldBuster"],
+
+  // Hide blocks or prefabs from the build menu, by name or guid. Empty in this example.
+  "hideItems": [],
+  "hidePrefabs": [],
+
+  // Hide every block and prefab from whole mod folders, e.g. ["Core_Laser", "Core_Plasma"]. Empty in this example.
+  "hideModFolders": [],
+
+  // Leave blocks out when a player pastes a prefab with the build tool (by name or guid, or whole mod folders).
+  // Existing craft, blueprints and saves keep them. Empty in this example.
+  "preventPaste": [],
+  "preventPasteModFolders": [],
+
+  // Turn every copy of one block into another, in all blueprints and designs. Empty in this example.
+  // "replaceItems": { "Old block name or guid": "Replacement block name or guid" }
+  "replaceItems": {}
+}

@@ -1,0 +1,9 @@
+{
+  "Authors": "Authors include Dev",
+  "Version": "00000000-0000-0000-0000-000000000000",
+  "ComponentId": {
+    "Guid": "8d093a6c-cf77-4691-a6bf-f3c6e05ec66a",
+    "Name": "FtdModApi"
+  },
+  "Description": "Shared modding API for From The Depths. Other mods depend on this; it does nothing on its own."
+}
